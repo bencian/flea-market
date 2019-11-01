@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backend fleamarket</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'backend', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'backend', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h2 class='nav-title'>Backend fleamarket </h2>
+    
+    <% if admin_signed_in? %>
+      Hola <%= current_admin.email %><br>
+      <%= link_to 'Editar perfil', edit_admin_registration_path %>      
+      <%= link_to 'Salir', destroy_admin_session_path, method: :delete %>
+    <% else %>
+      Logueate capo!
+    <% end %>
+    
+    <%= yield %>
+
+    <%= yield :modal %>
+  </body>
+</html>
