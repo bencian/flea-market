@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <h2 class='nav-title'>Backend fleamarket </h2>
+    <%= render 'backend/navbar' %>
     
     <% if admin_signed_in? %>
       Hola <%= current_admin.email %><br>
