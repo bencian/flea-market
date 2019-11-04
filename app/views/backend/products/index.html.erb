@@ -1,1 +1,26 @@
-hola soy el index de productos
+<h1 class='mt-2'>Categorias</h1>
+<%= render 'flash_message' %>
+
+<%= render 'filter' %>
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Código Interno</th>
+      <th>Precio</th>
+      <th>Costo</th>
+      <th>Activo</th>
+      <th>Categoría</th>
+      <th>Etiquetas</th>
+      <th>Imagen</th>
+      <th class='text-right'><%= link_to 'Nueva', new_product_path, class: 'btn btn-primary' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @presenter.products %>
+  </tbody>
+</table>
+
+<%= will_paginate @presenter.products %>

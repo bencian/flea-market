@@ -16,6 +16,6 @@ class ProductsPresenter
   private
 
   def filter_params
-    @params[:products_filter] ? @params.require(:products_filter).permit(:query) : {}
+    @params[:products_filter] ? @params.require(:products_filter).permit(:query,:category_id) : {}
   end
 end

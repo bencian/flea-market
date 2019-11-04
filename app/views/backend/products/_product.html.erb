@@ -1,0 +1,18 @@
+<tr>
+  <td><%= product.name %></td>
+  <td><%= product.description %></td>
+  <td><%= product.code %></td>
+  <td><%= product.price %></td>
+  <td><%= product.cost %></td>
+  <td><%= product.active %></td>
+  <td><%= product.category_name %></td>
+  <td>
+    <% product.tags.each do |tag| %>
+    <%= tag.name %>' '
+  </td>
+  <td>IMAGEN</td>
+  <td class='text-right'>
+    <%= link_to 'Editar', edit_product_path(product), class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to 'Borrar', product_path(product), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+  </td>
+</tr>

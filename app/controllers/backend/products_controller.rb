@@ -1,6 +1,6 @@
 class Backend::ProductsController < BackendController
   def index
-    @products = ProductsPresenter.new(params)
+    @presenter = ProductsPresenter.new(params)
   end
 
   def show
