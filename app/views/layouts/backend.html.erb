@@ -11,6 +11,8 @@
 
   <body>
     <%= render 'backend/navbar' %>
+
+    <%= render 'backend/sidebar' %>
     
     <% if admin_signed_in? %>
       Hola <%= current_admin.email %><br>
