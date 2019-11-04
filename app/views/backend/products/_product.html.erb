@@ -5,10 +5,11 @@
   <td><%= product.price %></td>
   <td><%= product.cost %></td>
   <td><%= product.active %></td>
-  <td><%= product.category_name %></td>
+  <td><%= product.category.name %></td>
   <td>
     <% product.tags.each do |tag| %>
-    <%= tag.name %>' '
+    <%= tag.name %>
+    <% end %>
   </td>
   <td>IMAGEN</td>
   <td class='text-right'>

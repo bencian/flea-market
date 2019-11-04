@@ -1,0 +1,66 @@
+<%= render 'flash_message' %>
+
+<%= form_with model: @product, local: true do |f| %>
+<div class='card'>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :name, 'Nombre' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :description, 'Descripción' %>
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :code, 'Código Interno' %>
+      <%= f.number_field :code, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :price, 'Precio' %>
+      <%= f.number_field :price, step: :any, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :cost, 'Costo' %>
+      <%= f.number_field :cost, step: :any, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-check">
+      <%= f.label :active, 'Activo', class: "form-check-label" %>
+      <%= f.check_box :name, class: 'form-check-input' %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :category_id, 'Categoria' %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, {}, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-body' id='product_images'>
+    <%= f.fields_for :product_images do |pi| %>
+      <%= render 'product_image_fields', f: pi %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Agregar imagen', f, :product_images %>
+    </div>
+  </div>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :tag_ids, 'Etiquetas' %>
+      <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, class: 'form-control', multiple: true %>
+    </div>
+  </div>
+  <div class='card-footer'>
+    <%= link_to 'Volver', products_path, class: 'btn btn-outline-secondary' %>
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
