@@ -11,19 +11,16 @@
 
   <body>
     <%= render 'backend/navbar' %>
+    <div class="d-flex" id="wrapper">
+      <div class="bg-light border-right" id="sidebar">
+        <%= render 'backend/sidebar' %>
+      </div>
+      <div id="page-content-wrapper" class='container'>
+      <button class="btn btn-primary mt-2 mb-4" id="menu-toggle">Toggle Menu</button>
+        <%= yield %>
 
-    <%= render 'backend/sidebar' %>
-    
-    <% if admin_signed_in? %>
-      Hola <%= current_admin.email %><br>
-      <%= link_to 'Editar perfil', edit_admin_registration_path %>      
-      <%= link_to 'Salir', destroy_admin_session_path, method: :delete %>
-    <% else %>
-      Logueate capo!
-    <% end %>
-    
-    <%= yield %>
-
-    <%= yield :modal %>
+        <%= yield :modal %>
+      </div>
+    </div>
   </body>
 </html>
