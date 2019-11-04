@@ -1,6 +1,6 @@
 class Backend::CategoriesController < BackendController
   def index
-    @presenter = Backend::CategoriesPresenter.new(params)
+    @presenter = CategoriesPresenter.new(params)
   end
 
   def show

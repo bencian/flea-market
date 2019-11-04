@@ -1,4 +1,4 @@
-class Backend::CategoriesPresenter
+class CategoriesPresenter
   def initialize(params)
     @params = params
   end
@@ -8,12 +8,12 @@ class Backend::CategoriesPresenter
   end
 
   def filter
-    @filter ||= Backend::CategoriesFilter.new(filter_params)
+    @filter ||= CategoriesFilter.new(filter_params)
   end
 
   private
 
   def filter_params
-    @params[:backend_categories_filter] ? @params.require(:backend_categories_filter).permit(:query) : {}
+    @params[:categories_filter] ? @params.require(:categories_filter).permit(:query) : {}
   end
 end

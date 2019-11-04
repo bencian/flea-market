@@ -1,4 +1,4 @@
-class Backend::CategoriesFilter
+class CategoriesFilter
   include ActiveModel::Model
 
   attr_accessor :query

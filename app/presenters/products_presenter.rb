@@ -1,4 +1,4 @@
-class Backend::ProductsPresenter
+class ProductsPresenter
   def initialize(params)
     @params = params
   end
