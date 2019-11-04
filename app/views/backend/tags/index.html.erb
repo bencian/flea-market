@@ -1,0 +1,18 @@
+<h1 class='mt-2'>Tags</h1>
+<%= render 'flash_message' %>
+
+<%= render 'filter' %>
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Nombre</th>
+      <th class='text-right'><%= link_to 'Nueva', new_tag_path, class: 'btn btn-primary' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @presenter.tags %>
+  </tbody>
+</table>
+
+<%= will_paginate @presenter.tags %>
