@@ -1,2 +1,2 @@
-class Backend::Tag < ApplicationRecord
+class Tag < ApplicationRecord
 end
