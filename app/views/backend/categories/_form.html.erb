@@ -1,0 +1,16 @@
+<%= render 'flash_message' %>
+
+<%= form_with model: @category, local: true do |f| %>
+<div class='card'>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :name, 'Nombre' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='card-footer'>
+    <%= link_to 'Volver', categories_path, class: 'btn btn-outline-secondary' %>
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
