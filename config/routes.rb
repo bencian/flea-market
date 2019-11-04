@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   scope :admin do
     root to: "backend/main#index", as: 'admin_root'
+    resources :categories, :module => 'backend'
+    resources :tags, :module => 'backend'
   end
   devise_for :admin, controllers: {
     sessions: 'admins/sessions',
