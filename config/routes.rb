@@ -2,12 +2,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "frontend/main#index"
 
-  namespace :backend do
-    root to: "main#index"
+  scope :admin do
+    root to: "backend/main#index", as: 'admin_root'
   end
-  devise_for :admins, controllers: {
+  devise_for :admin, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
   }
 
 end
+
+# /admin -> /backend/main#index
+
+# /admin/backend/main#index
