@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  before_save :default_values
+
   # -- Relations
   belongs_to :category
   has_and_belongs_to_many :tags
@@ -6,9 +8,40 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_images, allow_destroy: true
 
   # -- Validations
+  validates :name, presence: true, uniqueness: true
+  validates :description, presence: true
+  validates :code, 
+            presence: true, 
+            uniqueness: true, 
+            numericality: {
+              only_integer: true,
+              greater_than_or_equal_to: 0
+            }
+  validates :price, numericality: true, allow_nil: true
+  validates :cost, numericality: true, allow_nil: true
+  validate :one_primary_image
 
-
-  # -- scopes
-  scope :with_title, ->(name) { where('name like ?', "%#{name}%") }
+  # -- Scopes
+  scope :with_name, ->(name) { where('name like ?', "%#{name}%") }
   scope :with_category,->(category_id) { where('category_id = ?', category_id) }
+
+  # -- Methods
+  def default_values
+    self.price = 0.0 if price.nil?
+    self.cost = 0.0 if cost.nil?
+    self.active = true if active.nil?
+  end
+
+  def one_primary_image
+    result = product_images.select do |i|
+      i.primary
+    end
+    return unless result.count != 1
+
+    if result.count.zero?
+      errors.add(:product_images, 'El producto no tiene imagen principal')
+    else
+      errors.add(:product_images, 'El producto tiene mas de una imagen principal')
+    end
+  end
 end

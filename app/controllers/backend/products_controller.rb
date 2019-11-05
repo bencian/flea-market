@@ -4,6 +4,7 @@ class Backend::ProductsController < BackendController
   end
 
   def show
+    @product = Product.find(params[:id]).decorate
   end
 
   def new
@@ -11,12 +12,14 @@ class Backend::ProductsController < BackendController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
-  
+
   def create
     @product = Product.new(product_params)
 
     if @product.save
+      # attach image
       flash[:notice] = 'Creado'
       redirect_to products_path
     else
@@ -26,9 +29,21 @@ class Backend::ProductsController < BackendController
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      flash[:notice] = 'Creado'
+      redirect_to products_path
+    else
+      flash.now[:alert] = 'Error'
+      render :edit
+    end
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:notice] = 'Eliminado'
+    redirect_to products_path
   end
 
   private
@@ -46,6 +61,7 @@ class Backend::ProductsController < BackendController
       product_images_attributes: [
         :id,
         :primary,
+        :image,
         :_destroy
       ]
     )

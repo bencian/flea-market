@@ -1,0 +1,20 @@
+<% image = f.object&.image #CHANGE!%>
+
+<div class='nested-fields card'>
+  <div class='card-body'>
+    <div class="form-group">
+      <%= f.label :image, 'Nombre' %>
+      <% if image.attached? %>
+        <%= image_tag image.variant(resize_to_limit: [100,100]) %>
+      <% end %>
+      <%= f.file_field :image, direct_upload: true, class: 'form-control' %>
+    </div>
+    <div class="form-check">
+      <%= f.label :primary, 'Principal', class: "form-check-label" %>
+      <%= f.check_box :primary, class: 'form-check-input' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= link_to_remove_association "Eliminar segmento", f %>
+  </div>
+</div>
