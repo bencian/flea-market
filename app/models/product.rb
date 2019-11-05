@@ -1,6 +1,4 @@
 class Product < ApplicationRecord
-  before_save :default_values
-
   # -- Relations
   belongs_to :category
   has_and_belongs_to_many :tags
@@ -26,12 +24,6 @@ class Product < ApplicationRecord
   scope :with_category,->(category_id) { where('category_id = ?', category_id) }
 
   # -- Methods
-  def default_values
-    self.price = 0.0 if price.nil?
-    self.cost = 0.0 if cost.nil?
-    self.active = true if active.nil?
-  end
-
   def one_primary_image
     result = product_images.select do |i|
       i.primary
