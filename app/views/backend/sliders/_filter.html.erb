@@ -1,0 +1,6 @@
+<div class='d-flex justify-content-md-end'>
+  <%= form_with url: frontend_configurations_path, model: @presenter.filter,as: :filter, local: true, method: :get, class: 'form-inline' do |f| %>
+    <%= f.text_field :query, class: 'form-control mb-2 mr-sm-2' %>
+    <%= f.submit 'Search', class: 'btn btn-info mb-2' %>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@ class FrontendConfiguration < ApplicationRecord
   has_one_attached :image
 
   # -- Validations
-  validate :has_image_attached
+  # validate :has_image_attached
   validates :singleton_guard, presence: true, uniqueness: true
   validate :only_one_instance
 

@@ -1,0 +1,24 @@
+<h1 class='mt-2'>Configuration</h1>
+<%= render 'flash_message' %>
+<div class='container'>
+  <h3 class='mt-2'>Logo</h3>
+  ACA VA EL COSO DE LA Configuración
+</div>
+<div class='container'>
+  <h3 class='mt-2'>Sliders</h3>
+  <%= render 'backend/sliders/filter' %>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th class='text-right'><%= link_to 'New', new_slider_path, class: 'btn btn-primary' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @presenter.sliders %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @presenter.sliders %>
+</div>

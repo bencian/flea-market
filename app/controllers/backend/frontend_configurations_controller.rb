@@ -1,10 +1,12 @@
 class Backend::FrontendConfigurationsController < BackendController
   def index
-    @sliders = SlidersPresenter.new(params)
+    @presenter = SlidersPresenter.new(params)
     @configuration = FrontendConfiguration.first
   end
 
   def edit
+    @configuration = FrontendConfiguration.first
+    render :modal
   end
 
   def update
