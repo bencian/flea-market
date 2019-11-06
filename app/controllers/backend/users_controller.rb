@@ -1,21 +1,21 @@
 class Backend::UsersController < BackendController
+  
+  before_action :set_user, only: [:edit, :update, :destroy]
+
   def index
     @presenter = UsersPresenter.new(params)
   end
 
-  def new 
+  def new
     @user = Admin.new
   end
 
-  def edit
-    @user = Admin.find(params[:id])
-  end
-
+  def edit; end
 
   def create
     @user = Admin.new(user_params)
-    @user.password=user_params[:username]
-    @user.password_confirmation=user_params[:username] 
+    @user.password = user_params[:username]
+    @user.password_confirmation = user_params[:username]
     if @user.save
       flash[:notice] = 'Creado'
       redirect_to users_path
@@ -26,7 +26,6 @@ class Backend::UsersController < BackendController
   end
 
   def update
-    @user = Admin.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = 'Editado'
       redirect_to users_path
@@ -37,8 +36,7 @@ class Backend::UsersController < BackendController
   end
 
   def destroy
-    @user = Admin.find(params[:id])
-    if (current_admin != @user) 
+    if current_admin != @user
       @user.destroy
       flash[:notice] = 'Eliminado'
     else
@@ -49,6 +47,10 @@ class Backend::UsersController < BackendController
 
 
   private
+  
+  def set_user
+    @user = Admin.find(params[:id])
+  end
 
   def user_params
     params.require(:admin).permit(:username, :email)

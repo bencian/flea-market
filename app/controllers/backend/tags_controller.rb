@@ -1,19 +1,18 @@
 class Backend::TagsController < BackendController
+
+  before_action :set_tag, only: [:show, :edit, :update, :destroy]
+
   def index
     @presenter = TagsPresenter.new(params)
   end
 
-  def show
-    @tag = Tags.find(params[:id]).decorate
-  end
+  def show; end
 
   def new
     @tag= Tag.new
   end
 
-  def edit
-    @tag = Tag.find(params[:id])
-  end
+  def edit; end
 
   def create
     @tag = Tag.new(tag_params)
@@ -28,7 +27,6 @@ class Backend::TagsController < BackendController
   end
 
   def update
-    @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
       flash[:notice] = 'Creado'
       redirect_to tags_path
@@ -39,13 +37,16 @@ class Backend::TagsController < BackendController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
     @tag.destroy
     flash[:notice] = 'Eliminado'
     redirect_to tags_path
   end
 
   private
+
+  def set_tag
+    @tag = Tag.find(params[:id]).decorate
+  end
 
   def tag_params
     params.require(:tag).permit(:name)

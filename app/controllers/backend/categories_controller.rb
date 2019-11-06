@@ -1,19 +1,18 @@
 class Backend::CategoriesController < BackendController
+
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
+
   def index
     @presenter = CategoriesPresenter.new(params)
   end
 
-  def show
-    @category = Category.find(params[:id]).decorate
-  end
+  def show; end
 
   def new
     @category = Category.new
   end
 
-  def edit
-    @category = Category.find(params[:id])
-  end
+  def edit; end
 
   def create
     @category = Category.new(category_params)
@@ -28,7 +27,6 @@ class Backend::CategoriesController < BackendController
   end
 
   def update
-    @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = 'Creado'
       redirect_to categories_path
@@ -39,13 +37,16 @@ class Backend::CategoriesController < BackendController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = 'Eliminado'
     redirect_to categories_path
   end
 
   private
+
+  def set_category
+    @category = Category.find(params[:id]).decorate
+  end
 
   def category_params
     params.require(:category).permit(:name)

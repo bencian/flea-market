@@ -1,19 +1,18 @@
 class Backend::ProductsController < BackendController
+
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+
   def index
     @presenter = ProductsPresenter.new(params)
   end
 
-  def show
-    @product = Product.find(params[:id]).decorate
-  end
+  def show; end
 
   def new
     @product = Product.new
   end
 
-  def edit
-    @product = Product.find(params[:id])
-  end
+  def edit; end
 
   def create
     @product = Product.new(product_params)
@@ -28,7 +27,6 @@ class Backend::ProductsController < BackendController
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = 'Creado'
       redirect_to products_path
@@ -38,14 +36,17 @@ class Backend::ProductsController < BackendController
     end
   end
 
-  def destroy
-    @product = Product.find(params[:id])
+  def destroy 
     @product.destroy
     flash[:notice] = 'Eliminado'
     redirect_to products_path
   end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id]).decorate
+  end
 
   def product_params
     params.require(:product).permit(
