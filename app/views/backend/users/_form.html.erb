@@ -1,6 +1,9 @@
+
 <%= render 'flash_message' %>
 
-<%= form_with model: @user, url: '/admin/users', local: true do |f| %>
+<% @url= (@user.persisted? ? user_path : users_path ) %>
+
+<%= form_with model: @user, url: @url, local: true do |f| %>
 <div class='card'>
   <div class='card-body'>
     <div class="form-group">
