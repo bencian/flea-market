@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   scope :admin do
     root to: "backend/main#index", as: 'admin_root'
-    resources :categories, :module => 'backend', except: :show 
+    resources :categories, :module => 'backend', except: :show
     resources :tags, :module => 'backend', except: :show
     resources :products, :module => 'backend'
     resources :sliders, :module => 'backend', except: :index
     resources :users, :module => 'backend'
+    resources :frontend_configurations, only: [:index, :edit, :update], :module => 'backend'
   end
   devise_for :admin, controllers: {
     sessions: 'admins/sessions',
