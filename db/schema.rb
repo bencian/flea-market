@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_122752) do
     t.integer "singleton_guard"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["singleton_guard"], name: "index_configurations_on_singleton_guard", unique: true
+    t.index ["singleton_guard"], name: "index_frontend_configurations_on_singleton_guard", unique: true
   end
 
   create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
