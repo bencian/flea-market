@@ -19,7 +19,6 @@ class Backend::ProductsController < BackendController
     @product = Product.new(product_params)
 
     if @product.save
-      # attach image
       flash[:notice] = 'Creado'
       redirect_to products_path
     else

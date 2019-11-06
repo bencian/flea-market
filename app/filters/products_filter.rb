@@ -1,7 +1,7 @@
 class ProductsFilter
   include ActiveModel::Model
 
-  attr_accessor :query
+  attr_accessor :query, :category_id
 
   def initialize(params)
     @query = params[:query]
