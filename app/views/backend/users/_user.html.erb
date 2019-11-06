@@ -1,0 +1,9 @@
+<tr>
+  <td><%= user.username %></td>
+  <td><%= user.email %></td>
+  <td class='text-right'>
+    <%= link_to 'Editar', edit_user_path(user), class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to 'Borrar', user_path(user), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+  </td>
+</tr>
+

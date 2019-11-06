@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_172458) do
+ActiveRecord::Schema.define(version: 2019_11_05_170751) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,6 +81,13 @@ ActiveRecord::Schema.define(version: 2019_11_04_172458) do
     t.bigint "product_id", null: false
     t.bigint "tag_id", null: false
     t.index ["product_id", "tag_id"], name: "index_products_tags_on_product_id_and_tag_id"
+  end
+
+  create_table "sliders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_sliders_on_name", unique: true
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

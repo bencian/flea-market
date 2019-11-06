@@ -1,0 +1,17 @@
+<h1 class='mt-2'>Administradores</h1>
+<%= render 'flash_message' %>
+
+<%= render 'filter' %>
+
+<table class="table table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th class='text-right'><%= link_to 'Nuevo', new_user_path, class: 'btn btn-primary' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "user", collection: @presenter.users %>
+  </tbody>
+</table>

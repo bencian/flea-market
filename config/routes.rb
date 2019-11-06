@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :tags, :module => 'backend', except: :show
     resources :products, :module => 'backend'
     resources :sliders, :module => 'backend', except: :index
+    resources :users, :module => 'backend'
   end
   devise_for :admin, controllers: {
     sessions: 'admins/sessions',
@@ -15,7 +16,3 @@ Rails.application.routes.draw do
   }
 
 end
-
-# /admin -> /backend/main#index
-
-# /admin/backend/main#index
