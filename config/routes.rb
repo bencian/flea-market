@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :users, :module => 'backend'
     resources :frontend_configurations, only: [:index, :edit, :update], :module => 'backend'
   end
-  devise_for :admin, controllers: {
+  devise_for :admin,controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
-  }
-
+  }, skip: :registrations
 end
+
