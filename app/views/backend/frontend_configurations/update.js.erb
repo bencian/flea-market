@@ -1,0 +1,5 @@
+$('.modal-body').html('');
+$('.js-image-replacer').replaceWith("<%= j image_tag @configuration.get_image, class: 'img-fluid js-image-replacer' %>");
+$('#modal-container').modal('hide');
+$('#flash_messages_container').replaceWith('<%= j render 'flash_message' %>');
+

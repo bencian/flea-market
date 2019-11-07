@@ -1,8 +1,8 @@
 <tr id='<%= dom_id(slider) %>'>
   <td><%= slider.name %></td>
-  <td><%= image_tag slider.image.attachment %></td>
+  <td><%= image_tag slider.image.attachment, class: 'img-fluid' %></td>
   <td class='text-right'>
-    <%= link_to 'Edit', edit_category_path(slider), remote: true, class: 'btn btn-sm btn-outline-warning' %>
-    <%= link_to 'Delete', category_path(slider), remote: true, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+    <%= link_to 'Edit', edit_slider_path(slider), remote: true, class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to 'Delete', slider_path(slider), remote: true, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>

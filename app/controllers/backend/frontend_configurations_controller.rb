@@ -6,9 +6,23 @@ class Backend::FrontendConfigurationsController < BackendController
 
   def edit
     @configuration = FrontendConfiguration.first
-    render :modal
   end
 
   def update
+    @configuration = FrontendConfiguration.first
+    if params.key?(:frontend_configuration) && 
+       @configuration.update(frontend_config_params)
+      flash[:notice] = 'Creado'
+    else
+      flash.now[:alert] = 'Error'
+      render :save_error
+    end
+  end
+
+  private
+
+  def frontend_config_params
+    byebug
+    params.require(:frontend_configuration).permit(:image)
   end
 end
