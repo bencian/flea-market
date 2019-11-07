@@ -9,4 +9,8 @@
       <%= image_tag @slider.image.image if @slider.persisted? %>
       <%= f.file_field :image, class: 'form-control' %>
     </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
 <% end %>
