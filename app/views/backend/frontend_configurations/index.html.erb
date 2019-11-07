@@ -2,7 +2,9 @@
 <%= render 'flash_message' %>
 <div class='container'>
   <h3 class='mt-2'>Logo</h3>
-  ACA VA EL COSO DE LA Configuración
+  <%= image_tag @configuration.get_image, class: 'img-fluid js-image-replacer' %>
+  <br>
+  <%= link_to 'Edit', edit_frontend_configuration_path(@configuration), remote: true, class: 'mt-2 btn btn-outline-warning' %>
 </div>
 <div class='container'>
   <h3 class='mt-2'>Sliders</h3>

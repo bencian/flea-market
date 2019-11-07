@@ -6,7 +6,7 @@
 
     <div class="form-group">
       <%= f.label :image, 'Nombre' %>
-      <%= image_tag @slider.image.image if @slider.persisted? %>
+      <%= image_tag @slider.image.attachment if @slider.persisted? %>
       <%= f.file_field :image, class: 'form-control' %>
     </div>
   <div class="modal-footer">

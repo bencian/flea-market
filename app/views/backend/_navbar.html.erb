@@ -6,7 +6,12 @@
   <ul class="navbar-nav ml-auto mt-3">
     <li class="nav-item">
       <% if current_admin %>
-        <p style= 'color: white'><%= current_admin.username %> </p>
+        <%= link_to 'Configuration', frontend_configurations_path, class: "mr-2 nav-link" %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_admin %>
+        <p style='color:white' class="mr-2" ><%= current_admin.username %> </p>
       <% end %>
     </li>
     <li class="nav-item">

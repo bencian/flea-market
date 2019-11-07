@@ -1,0 +1,12 @@
+<%= form_with model: @configuration do |f| %>
+    <div class="form-group">
+      <%= f.label :image, 'Logo' %>
+      <br>
+      <%= image_tag @configuration.get_image, class: 'img-fluid'%>
+      <%= f.file_field :image, class: 'form-control' %>
+    </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

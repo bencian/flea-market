@@ -22,4 +22,8 @@ class FrontendConfiguration < ApplicationRecord
 
     errors.add(:singleton_guard, 'No podes crear otra instancia, usa la existente')
   end
+
+  def get_image
+    image.attached? ? image : 'missing.png'
+  end
 end

@@ -28,7 +28,7 @@ class Backend::SlidersController < BackendController
       flash[:notice] = 'Creado'
     else
       flash.now[:alert] = 'Error'
-      render :modal
+      render :save_error
     end
   end
 

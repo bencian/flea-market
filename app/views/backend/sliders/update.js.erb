@@ -1,0 +1,4 @@
+$('.modal-body').html('');
+$('#sliders_container #<%= dom_id(@slider) %>').replaceWith('<%= j render 'slider', slider: @slider %>');
+$('#modal-container').modal('hide');
+$('#flash_messages_container').replaceWith('<%= j render 'flash_message' %>');
