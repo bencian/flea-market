@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Slider, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Factory' do
+    context 'when a slider is created' do
+      subject do
+        build(:slider)
+      end
+      it 'has a valid factory' do
+        expect(subject.valid?).to be true 
+      end
+    end
+  end
 end
