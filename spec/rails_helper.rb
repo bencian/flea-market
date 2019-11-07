@@ -10,6 +10,8 @@ end
 
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'devise'
+require_relative 'support/controller_macros'  
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -27,6 +29,10 @@ RSpec.configure do |config|
   end
 
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
+
 end
+
 
 RSpec::Matchers.define_negated_matcher :not_change, :change
