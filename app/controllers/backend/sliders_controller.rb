@@ -6,7 +6,6 @@ class Backend::SlidersController < BackendController
 
   def new
     @slider = Slider.new
-    byebug
   end
 
   def edit
@@ -15,12 +14,11 @@ class Backend::SlidersController < BackendController
 
   def create
     @slider = Slider.new(slider_params)
-
     if @slider.save
-      flash[:notice] = 'Creado'
+      flash.now[:notice] = 'Creado'
     else
       flash.now[:alert] = 'Error'
-      render :modal
+      render :save_error
     end
   end
 
