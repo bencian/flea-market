@@ -11,4 +11,27 @@ RSpec.describe Slider, type: :model do
       end
     end
   end
+
+  describe 'Presence validations' do
+    before { FactoryBot.build(:slider) }
+    it { should validate_presence_of(:name) }
+  end
+
+  describe 'Uniqueness validations' do
+    before { FactoryBot.build(:slider) }
+    it { should validate_uniqueness_of(:name) }
+  end
+
+  describe 'Custom Validation' do
+    context "when a slider doesn't have an attached image" do 
+      subject do
+        build(:slider)
+      end
+
+      let!(:_unattached) { subject.image.detach }
+
+      it { expect(subject).to_not be_valid }
+    end
+  end
+
 end
