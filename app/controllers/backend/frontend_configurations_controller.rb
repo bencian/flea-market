@@ -22,7 +22,6 @@ class Backend::FrontendConfigurationsController < BackendController
   private
 
   def frontend_config_params
-    byebug
     params.require(:frontend_configuration).permit(:image)
   end
 end
