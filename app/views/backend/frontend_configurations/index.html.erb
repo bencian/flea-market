@@ -12,13 +12,17 @@
       <tr>
         <th>Name</th>
         <th>Image</th>
-        <th class='text-right'><%= link_to 'New', new_slider_path, class: 'btn btn-primary' %></th>
+        <th class='text-right'><%= link_to 'New', new_slider_path, remote: true, class: 'btn btn-primary' %></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id='sliders_container'>
       <%= render @presenter.sliders %>
     </tbody>
   </table>
 
   <%= will_paginate @presenter.sliders %>
 </div>
+
+<% content_for :modal do %>
+  <%= render 'modal' %>
+<% end %>

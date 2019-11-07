@@ -5,7 +5,8 @@ class Backend::SlidersController < BackendController
   end
 
   def new
-    @slider = Slider.newx
+    @slider = Slider.new
+    byebug
   end
 
   def edit
@@ -17,10 +18,9 @@ class Backend::SlidersController < BackendController
 
     if @slider.save
       flash[:notice] = 'Creado'
-      redirect_to sliders_path
     else
       flash.now[:alert] = 'Error'
-      render :new
+      render :modal
     end
   end
 
@@ -28,10 +28,9 @@ class Backend::SlidersController < BackendController
     @slider = Slider.find(params[:id])
     if @slider.update(slider_params)
       flash[:notice] = 'Creado'
-      redirect_to sliders_path
     else
       flash.now[:alert] = 'Error'
-      render :edit
+      render :modal
     end
   end
 
@@ -39,7 +38,6 @@ class Backend::SlidersController < BackendController
     @slider = Slider.find(params[:id])
     @slider.destroy
     flash[:notice] = 'Eliminado'
-    redirect_to sliders_path
   end
 
   private
