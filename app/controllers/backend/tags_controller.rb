@@ -37,9 +37,12 @@ class Backend::TagsController < BackendController
   end
 
   def destroy
-    @tag.destroy
-    flash[:notice] = 'Eliminado'
-    redirect_to tags_path
+    if @tag.destroy
+      flash[:notice] = 'Eliminado'
+    else
+      flash[:alert] = 'No puedes borrar una etiqueta con productos'
+    end
+    redirect_to admin_tags_path
   end
 
   private

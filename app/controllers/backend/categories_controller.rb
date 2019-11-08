@@ -37,11 +37,14 @@ class Backend::CategoriesController < BackendController
   end
 
   def destroy
-    @category.destroy
-    flash[:notice] = 'Eliminado'
-    redirect_to categories_path
+    if @category.destroy
+      flash[:notice] = 'Eliminado'
+    else
+      flash[:alert] = 'No puedes borrar una categoria con productos'
+    end
+    redirect_to admin_categories_path
   end
-
+  
   private
 
   def set_category

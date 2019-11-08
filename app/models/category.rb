@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   # -- Relations
-  has_many :product
+  has_many :product, dependent: :restrict_with_error
 
   # -- Validations
   validates :name, presence: true, uniqueness: true
