@@ -8,9 +8,9 @@ class Product < ApplicationRecord
   # -- Validations
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :code, 
-            presence: true, 
-            uniqueness: true, 
+  validates :code,
+            presence: true,
+            uniqueness: true,
             numericality: {
               only_integer: true,
               greater_than_or_equal_to: 0
@@ -21,7 +21,7 @@ class Product < ApplicationRecord
 
   # -- Scopes
   scope :with_name, ->(name) { where('name like ?', "%#{name}%") }
-  scope :with_category,->(category_id) { where('category_id = ?', category_id) }
+  scope :with_category, ->(category_id) { where('category_id = ?', category_id) }
 
   # -- Methods
   def one_primary_image
