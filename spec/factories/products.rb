@@ -6,22 +6,10 @@ FactoryBot.define do
     price { Faker::Number.decimal(l_digits: 2) }
     cost { Faker::Number.decimal(l_digits: 2) }
     active { true }
-    category { build(:category) }
-
-    transient do
-      image_count { 2 }
-    end
-
-    trait :with_several_product_images do
-      after(:create) do |product,options|
-        create_list(:product_image, options.image_count, product: product)
-      end
-    end
-
-    trait :with_one_product_image do
-      after(:create) do |product|
-        create(:product_image, product: product)
-      end
+    association :category
+    after(:build) do |product|
+      product_image = build(:product_image, product: product)
+      product.product_images << product_image
     end
   end
 end
