@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "frontend/main#index"
-
+  resources :products, :module => 'frontend', only: [:index, :show]
   scope :admin do
     root to: "backend/main#index", as: 'admin_root'
     resources :categories, :module => 'backend', except: :show

@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'backend', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'backend/navbar' %>
     <div class="d-flex" id="wrapper">
       <div class="bg-light border-right" id="sidebar">

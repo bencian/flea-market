@@ -21,7 +21,7 @@ class Product < ApplicationRecord
 
   # -- Scopes
   scope :with_name, ->(name) { where('name like ?', "%#{name}%") }
-  scope :with_category,->(category_id) { where('category_id = ?', category_id) }
+  scope :with_category, ->(category_id) { where('category_id = ?', category_id) }
 
   # -- Methods
   def one_primary_image
