@@ -1,0 +1,8 @@
+<div class='d-flex justify-content-md-end'>
+  <%= form_with url: products_path, model: @presenter.filter, as: :filter, local: true, method: :get, class: 'form-inline' do |f| %>
+    <%= f.text_field :query, class: 'form-control mb-2 mr-sm-2' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: 'Todas'}, class: 'form-control mb-2 mr-sm-2' %>
+    <%= f.select :order_by,{'Ordenado A-Z':'asc', 'Ordenado Z-A':'desc' } , class: 'form-control mb-2 mr-sm-2' %>
+    <%= f.submit 'Buscar', class: 'btn btn-info mb-2' %>
+  <% end %>
+</div>
