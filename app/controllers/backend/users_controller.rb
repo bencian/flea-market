@@ -18,7 +18,7 @@ class Backend::UsersController < BackendController
     @user.password_confirmation = user_params[:username]
     if @user.save
       flash[:notice] = 'Creado'
-      redirect_to users_path
+      redirect_to admin_users_path
     else
       flash.now[:alert] = @user.errors
       render :new
@@ -28,7 +28,7 @@ class Backend::UsersController < BackendController
   def update
     if @user.update(user_params)
       flash[:notice] = 'Editado'
-      redirect_to users_path
+      redirect_to admin_users_path
     else
       flash.now[:alert] = 'Error'
       render :edit
@@ -42,7 +42,7 @@ class Backend::UsersController < BackendController
     else
       flash[:alert] = 'No te puedes borrar a ti mismo'
     end
-    redirect_to users_path
+    redirect_to admin_users_path
   end
 
 

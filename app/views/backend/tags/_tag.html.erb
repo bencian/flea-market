@@ -1,7 +1,7 @@
 <tr>
   <td><%= tag.name %></td>
   <td class='text-right'>
-    <%= link_to 'Editar', edit_tag_path(tag), class: 'btn btn-sm btn-outline-warning' %>
-    <%= link_to 'Borrar', tag_path(tag), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+    <%= link_to 'Editar', edit_admin_tag_path(tag), class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to 'Borrar', admin_tag_path(tag), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>

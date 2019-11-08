@@ -19,7 +19,7 @@ class Backend::CategoriesController < BackendController
 
     if @category.save
       flash[:notice] = 'Creado'
-      redirect_to categories_path
+      redirect_to admin_categories_path
     else
       flash.now[:alert] = 'Error'
       render :new
@@ -29,7 +29,7 @@ class Backend::CategoriesController < BackendController
   def update
     if @category.update(category_params)
       flash[:notice] = 'Creado'
-      redirect_to categories_path
+      redirect_to admin_categories_path
     else
       flash.now[:alert] = 'Error'
       render :edit

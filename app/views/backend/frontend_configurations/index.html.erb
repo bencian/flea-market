@@ -4,7 +4,7 @@
   <h3 class='mt-2'>Logo</h3>
   <%= image_tag @configuration.get_image, class: 'img-fluid js-image-replacer' %>
   <br>
-  <%= link_to 'Edit', edit_frontend_configuration_path(@configuration), remote: true, class: 'mt-2 btn btn-outline-warning' %>
+  <%= link_to 'Edit', edit_admin_frontend_configuration_path(@configuration), remote: true, class: 'mt-2 btn btn-outline-warning' %>
 </div>
 <div class='container'>
   <h3 class='mt-2'>Sliders</h3>
@@ -14,7 +14,7 @@
       <tr>
         <th>Name</th>
         <th>Image</th>
-        <th class='text-right'><%= link_to 'New', new_slider_path, remote: true, class: 'btn btn-primary' %></th>
+        <th class='text-right'><%= link_to 'New', new_admin_slider_path, remote: true, class: 'btn btn-primary' %></th>
       </tr>
     </thead>
     <tbody id='sliders_container'>

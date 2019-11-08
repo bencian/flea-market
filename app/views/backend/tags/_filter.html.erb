@@ -1,5 +1,5 @@
 <div class='d-flex justify-content-md-end'>
-  <%= form_with url: tags_path, model: @presenter.filter,as: :filter, local: true, method: :get, class: 'form-inline' do |f| %>
+  <%= form_with url: admin_tags_path, model: @presenter.filter,as: :filter, local: true, method: :get, class: 'form-inline' do |f| %>
     <%= f.text_field :query, class: 'form-control mb-2 mr-sm-2' %>
     <%= f.submit 'Buscar', class: 'btn btn-info mb-2' %>
   <% end %>

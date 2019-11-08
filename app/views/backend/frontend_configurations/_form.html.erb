@@ -1,4 +1,4 @@
-<%= form_with model: @configuration do |f| %>
+<%= form_with model: [:admin, @configuration] do |f| %>
     <div class="form-group">
       <%= f.label :image, 'Logo' %>
       <br>
