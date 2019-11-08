@@ -1,6 +1,6 @@
 <%= render 'flash_message' %>
 
-<%= form_with model: @tag, local: true do |f| %>
+<%= form_with model: [:admin, @tag], local: true do |f| %>
 <div class='card'>
   <div class='card-body'>
     <div class="form-group">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class='card-footer'>
-    <%= link_to 'Volver', tags_path, class: 'btn btn-outline-secondary' %>
+    <%= link_to 'Volver', admin_tags_path, class: 'btn btn-outline-secondary' %>
     <%= f.submit 'Guardar', class: 'btn btn-primary' %>
   </div>
 </div>

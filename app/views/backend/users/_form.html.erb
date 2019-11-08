@@ -1,7 +1,7 @@
 
 <%= render 'flash_message' %>
 
-<% @url= (@user.persisted? ? user_path : users_path ) %>
+<% @url= (@user.persisted? ? admin_user_path : admin_users_path ) %>
 
 <%= form_with model: @user, url: @url, local: true do |f| %>
 <div class='card'>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class='card-footer'>
-    <%= link_to 'Volver', users_path, class: 'btn btn-outline-secondary' %>
+    <%= link_to 'Volver', admin_users_path, class: 'btn btn-outline-secondary' %>
     <%= f.submit 'Guardar', class: 'btn btn-primary' %>
   </div>
 </div>

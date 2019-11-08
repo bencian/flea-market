@@ -71,7 +71,7 @@ RSpec.describe Backend::TagsController, type: :controller do
 
       it 'redirects to tag#index' do
         subject
-        expect(response).to redirect_to(tags_path)
+        expect(response).to redirect_to(admin_tags_path)
       end
     end
 
@@ -127,7 +127,7 @@ RSpec.describe Backend::TagsController, type: :controller do
 
       it 'redirects to tag#index' do
         subject
-        expect(response).to redirect_to(tags_path)
+        expect(response).to redirect_to(admin_tags_path)
       end
     end
 
@@ -153,7 +153,7 @@ RSpec.describe Backend::TagsController, type: :controller do
 
       it 'redirects to tag#index' do
         subject
-        expect(response).to redirect_to(tags_path)
+        expect(response).to redirect_to(admin_tags_path)
       end
     end
 

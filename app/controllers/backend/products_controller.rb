@@ -19,7 +19,7 @@ class Backend::ProductsController < BackendController
 
     if @product.save
       flash[:notice] = 'Creado'
-      redirect_to products_path
+      redirect_to admin_products_path
     else
       flash.now[:alert] = 'Error'
       render :new
@@ -29,7 +29,7 @@ class Backend::ProductsController < BackendController
   def update
     if @product.update(product_params)
       flash[:notice] = 'Creado'
-      redirect_to products_path
+      redirect_to admin_products_path
     else
       flash.now[:alert] = 'Error'
       render :edit
@@ -39,7 +39,7 @@ class Backend::ProductsController < BackendController
   def destroy 
     @product.destroy
     flash[:notice] = 'Eliminado'
-    redirect_to products_path
+    redirect_to admin_products_path
   end
 
   private
