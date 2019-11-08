@@ -2,7 +2,7 @@ require 'spec_helper'
 
 ENV['RAILS_ENV'] ||= 'test'
 
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 
 if Rails.env.production?
   abort('The Rails environment is running in production mode!')
@@ -11,7 +11,8 @@ end
 require 'rspec/rails'
 require 'shoulda/matchers'
 require 'devise'
-require_relative 'support/controller_macros'  
+require_relative 'support/controller_macros'
+require_relative 'support/database_cleaner'
 
 ActiveRecord::Migration.maintain_test_schema!
 

@@ -13,7 +13,7 @@ RSpec.describe FrontendConfiguration, type: :model do
   end
 
   describe 'Uniqueness validations' do
-    before { FactoryBot.build(:frontend_configuration) }
+    subject { FactoryBot.build(:frontend_configuration) }
     it { should validate_uniqueness_of(:singleton_guard) }
   end
 

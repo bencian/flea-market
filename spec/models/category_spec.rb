@@ -12,15 +12,25 @@ RSpec.describe Category, type: :model do
     end
   end
 
-  describe 'Presence validations' do
-    before { FactoryBot.build(:category) }
-    it { should validate_presence_of(:name) }
-  end
+  describe 'Validations' do
+    context 'presence of name' do
+      before { FactoryBot.build(:category) }
+      it { should validate_presence_of(:name) }
+    end
 
-  describe 'Uniqueness validations' do
-    before { FactoryBot.build(:category) }
-    it { should validate_uniqueness_of(:name) }
-  end
+    context 'uniqueness of name' do
+      before { FactoryBot.build(:category) }
+      it { should validate_uniqueness_of(:name) }
+    end
 
+    context 'when a Category with posts gets deleted' do
+      subject do
+        create(:category, :with_products)
+      end
+
+      it 'is expected to fail' do
+        expect(subject.destroy).to be false
+      end
+    end
+  end
 end
-

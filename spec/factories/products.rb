@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :product do
-    name { Faker::Name.name }
+    name { Faker::Name.unique.name }
     description { Faker::Name.name }
-    code { Faker::Number.number(digits: 10) }
+    code { Faker::Number.unique.number(digits: 10) }
     price { Faker::Number.decimal(l_digits: 2) }
     cost { Faker::Number.decimal(l_digits: 2) }
     active { true }
