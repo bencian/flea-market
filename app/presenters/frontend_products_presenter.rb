@@ -5,7 +5,7 @@ class FrontendProductsPresenter
 
   def products
     @products ||= filter.call
-                        .paginate(page: @params[:page], per_page: 5)
+                        .paginate(page: @params[:page], per_page: 8)
                         .decorate
   end
 
@@ -18,7 +18,8 @@ class FrontendProductsPresenter
   def filter_params
     @params.fetch(:products_filter, {}).permit(
       :query,
-      :category_id
+      :category_id,
+      :order_by
     ).merge(only_active: true)
   end
 end

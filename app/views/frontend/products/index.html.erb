@@ -1,0 +1,9 @@
+<h1 class='mt-2'>Productos</h1>
+<%= render 'flash_message' %>
+
+<%= render 'filter' %>
+<div class="row">
+  <%= render @presenter.products %>  
+</div>
+
+<%= will_paginate @presenter.products %>

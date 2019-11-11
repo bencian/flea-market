@@ -1,0 +1,11 @@
+
+<div class="col-sm-3">
+<div class="card card-block">
+    <%= image_tag product.primary_image, class: 'img-fluid card-img-top', style: 'width: 200px' %>  <div class="card-block">
+    <h4 class="card-title"><%= product.name %></h4>
+    <p class="card-text"><%= product.description %></p>
+    <p class="card-text">$<%= product.price %></p>
+    <%= link_to 'Ver', product_path(product), class: 'btn btn-sm btn-outline-info' %>
+  </div>
+  </div>
+</div>
