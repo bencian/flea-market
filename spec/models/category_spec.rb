@@ -23,7 +23,7 @@ RSpec.describe Category, type: :model do
       it { should validate_uniqueness_of(:name) }
     end
 
-    context 'when a Category with posts gets deleted' do
+    context 'when a Category with products gets deleted' do
       subject do
         create(:category, :with_products)
       end

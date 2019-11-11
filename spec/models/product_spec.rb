@@ -17,20 +17,18 @@ RSpec.describe Product, type: :model do
   end
 
   describe 'Presence validations' do
-    subject { FactoryBot.build(:product) }
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:code) }
   end
 
   describe 'Uniqueness validations' do
-    subject { FactoryBot.build(:product) }
+    subject { build(:product) }
     it { should validate_uniqueness_of(:name) }
-    it { should validate_uniqueness_of(:code) }
+    it { should validate_uniqueness_of(:code).case_insensitive }
   end
 
   describe 'Numericality validations' do
-    subject { FactoryBot.build(:product) }
     it { should validate_numericality_of(:code) }
     it { should validate_numericality_of(:code).only_integer }
     it { should validate_numericality_of(:price) }

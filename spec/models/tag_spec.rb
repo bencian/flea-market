@@ -22,16 +22,6 @@ RSpec.describe Tag, type: :model do
       subject { FactoryBot.build(:tag) }
       it { should validate_uniqueness_of(:name) }
     end
-
-    context 'when a tag with posts gets deleted' do
-      subject do
-        create(:tag, :with_products)
-      end
-
-      it 'is expected to fail' do
-        expect(subject.destroy).to be false
-      end
-    end
   end
 
 end
