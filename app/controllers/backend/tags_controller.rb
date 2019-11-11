@@ -1,5 +1,4 @@
 class Backend::TagsController < BackendController
-
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -28,7 +27,7 @@ class Backend::TagsController < BackendController
 
   def update
     if @tag.update(tag_params)
-      flash[:notice] = 'Creado'
+      flash[:notice] = 'Updated'
       redirect_to admin_tags_path
     else
       flash.now[:alert] = 'Error'
@@ -37,11 +36,7 @@ class Backend::TagsController < BackendController
   end
 
   def destroy
-    if @tag.destroy
-      flash[:notice] = 'Eliminado'
-    else
-      flash[:alert] = 'No puedes borrar una etiqueta con productos'
-    end
+    flash[:notice] = 'Eliminado'
     redirect_to admin_tags_path
   end
 

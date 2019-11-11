@@ -1,4 +1,4 @@
 $('#modal-body').html("<%= j render 'form', slider: @slider %>");
-$('#exampleModalLongTitle').text('Edit slider');
+$('#exampleModalLongTitle').text('<%= t('entity_titles.slider.edit')%>');
 $('#modal_flash_messages_container').html('');
 $('#modal-container').modal('toggle');

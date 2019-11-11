@@ -2,8 +2,8 @@
   <td><%= user.username %></td>
   <td><%= user.email %></td>
   <td class='text-right'>
-    <%= link_to 'Editar', edit_admin_user_path(user), class: 'btn btn-sm btn-outline-warning' %>
-    <%= link_to 'Borrar', admin_user_path(user), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+    <%= link_to t('button_options.edit'), edit_admin_user_path(user), class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to t('button_options.delete'), admin_user_path(user), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>
 

@@ -43,6 +43,7 @@ es:
       email: 'Correo electrónico'
     slider:
       name: 'Nombre'
+      image: 'Imagen'
   flash_messages:
     created: 'Creado'
     error: 'Error'
@@ -51,4 +52,11 @@ es:
 
     specific:
       category_restriction: 'No puedes borrar una categoría que tiene productos'
-  
+  sidebar:
+    products: 'Lista de productos'
+    categories: 'Lista de categorías'
+    tags: 'Lista de etiquetas'
+    users: 'Lista de usuarios'
+  session:
+    log_out: 'Cerrar sesión'
+    log_in: 'Iniciar sesión'

@@ -1,4 +1,4 @@
-<h1 class='mt-2'>Etiquetas</h1>
+<h1 class='mt-2'><%= t('entities.tags')%></h1>
 <%= render 'flash_message' %>
 
 <%= render 'filter' %>
@@ -6,8 +6,8 @@
 <table class="table table-bordered">
   <thead class="thead-light">
     <tr>
-      <th>Nombre</th>
-      <th class='text-right'><%= link_to 'Nueva', new_admin_tag_path, class: 'btn btn-primary' %></th>
+      <th><%= t('entity_fields.tag.name')%></th>
+      <th class='text-right'><%= link_to t('button_options.new'), new_admin_tag_path, class: 'btn btn-primary' %></th>
     </tr>
   </thead>
   <tbody>

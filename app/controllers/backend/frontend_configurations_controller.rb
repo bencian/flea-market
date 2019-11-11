@@ -12,7 +12,7 @@ class Backend::FrontendConfigurationsController < BackendController
     @configuration = FrontendConfiguration.first
     if params.key?(:frontend_configuration) && 
        @configuration.update(frontend_config_params)
-      flash[:notice] = 'Creado'
+      flash[:notice] = 'Updated'
     else
       flash.now[:alert] = 'Error'
       render :save_error

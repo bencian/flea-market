@@ -2,7 +2,7 @@
   <td><%= slider.name %></td>
   <td><%= image_tag slider.image.attachment, class: 'img-fluid' %></td>
   <td class='text-right'>
-    <%= link_to 'Edit', edit_admin_slider_path(slider), remote: true, class: 'btn btn-sm btn-outline-warning' %>
-    <%= link_to 'Delete', admin_slider_path(slider), remote: true, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
+    <%= link_to  t('button_options.edit'), edit_admin_slider_path(slider), remote: true, class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to t('button_options.delete'), admin_slider_path(slider), remote: true, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>

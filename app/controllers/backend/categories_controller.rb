@@ -18,7 +18,7 @@ class Backend::CategoriesController < BackendController
     @category = Category.new(category_params)
 
     if @category.save
-      flash[:notice] = 'Creado'
+      flash[:notice] = 'Created' 
       redirect_to admin_categories_path
     else
       flash.now[:alert] = 'Error'
@@ -28,7 +28,7 @@ class Backend::CategoriesController < BackendController
 
   def update
     if @category.update(category_params)
-      flash[:notice] = 'Creado'
+      flash[:notice] = 'Updated'
       redirect_to admin_categories_path
     else
       flash.now[:alert] = 'Error'
@@ -38,9 +38,9 @@ class Backend::CategoriesController < BackendController
 
   def destroy
     if @category.destroy
-      flash[:notice] = 'Eliminado'
+      flash[:notice] = 'Deleted'
     else
-      flash[:alert] = 'No puedes borrar una categoria con productos'
+      flash[:alert] = "You can't delete a category that has products"
     end
     redirect_to admin_categories_path
   end
