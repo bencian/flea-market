@@ -1,7 +1,7 @@
 class Tag < ApplicationRecord
 
   # -- Relations
-  has_and_belongs_to_many :products, dependent: :restrict_with_error
+  has_and_belongs_to_many :products, dependent: :restrict_with_error, optional: true
 
   # -- Validations
   validates :name, presence: true, uniqueness: true
