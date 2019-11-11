@@ -43,6 +43,9 @@ es:
     user:
       username: 'Nombre de usuario'
       email: 'Correo electrónico'
+      new_password: 'Nueva contraseña'
+      confirm_password: 'Confirmar contraseña'
+      old_password: 'Contraseña actual'
     slider:
       name: 'Nombre'
       image: 'Imagen'
@@ -84,4 +87,6 @@ es:
 
   alerts:
     you_sure: '¿Estás seguro?'
+    password_info: 'Dejala en blanco si no quieres modificarla'
+    password_confirm: 'Necesitamos tu contraseña anterior para editar'
   

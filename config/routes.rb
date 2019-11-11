@@ -4,17 +4,15 @@ Rails.application.routes.draw do
   resources :products, module: :frontend, only: [:index, :show]
   namespace :admin, module: :backend do
     root action: :index, controller: :main
-    #scope module: :backend do
-      resources :categories, except: :show
-      resources :tags, except: :show
-      resources :products
-      resources :sliders, except: :index
-      resources :users
-      resources :frontend_configurations, only: [:index, :edit, :update]
-    #end
+    resources :categories, except: :show
+    resources :tags, except: :show
+    resources :products
+    resources :sliders, except: :index
+    resources :users
+    resources :frontend_configurations, only: [:index, :edit, :update]
   end
   devise_for :admin, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
-  }, skip: :registrations
+  }
 end

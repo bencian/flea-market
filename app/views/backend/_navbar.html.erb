@@ -1,22 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href=<%= admin_root_path %>>Fleamarket</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <ul class="navbar-nav ml-auto mt-3">
     <li class="nav-item">
       <% if current_admin %>
-        <%= link_to t('entity.configuration'), admin_frontend_configurations_path, class: "mr-2 nav-link" %>
+        <%= link_to t('entity.configuration'), admin_frontend_configurations_path, class: "nav-link" %>
       <% end %>
     </li>
     <li class="nav-item">
       <% if current_admin %>
-        <p style='color:white' class="mr-2" ><%= current_admin.username %> </p>
+        <p style='color:white' class="nav-link" ><%= current_admin.username %> </p>
       <% end %>
     </li>
     <li class="nav-item">
       <% if current_admin %>
-        <%= link_to t('session.log_out'), destroy_admin_session_path, method: :delete %>
+        <%= link_to t('session.edit_profile'), edit_admin_registration_path, class: "nav-link"%>
+      <% end %>
+    </li>    
+    <li class="nav-item">
+      <% if current_admin %>
+        <%= link_to t('session.log_out'), destroy_admin_session_path, method: :delete, class: "nav-link" %>
       <% else %>
         <a class="nav-link" href=<%= new_admin_session_path %>><%=t('session.log_in')%></a>
       <% end %>
