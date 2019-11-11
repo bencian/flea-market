@@ -1,4 +1,54 @@
 es:
   button_options:
+    view: 'Ver'
     edit: 'Editar'
-  categories: 'Categorías'
+    delete: 'Borrar'
+    search: 'Buscar'
+    save: 'Guardar'
+    return: 'Volver'
+    new: 'Nuevo'
+  entities:
+    tags: 'Etiquetas'
+    categories: 'Categorías'
+    products: 'Productos'
+    users: 'Usuarios'
+    sliders: 'Presentaciones'
+  entity:
+    tag: 'Etiqueta'
+    category: 'Categoría'
+    product: 'Producto'
+    users: 'Usuario'
+    slider: 'Presentación'
+    configuration: 'Configuración'
+    logo: 'Logo'
+  entity_fields:
+    tag:
+      name: 'Nombre'
+    category:
+      name: 'Nombre'
+    product:
+      name: 'Nombre'
+      description: 'Descripción'
+      code: 'Código interno'
+      price: 'Precio'
+      cost: 'Costo'
+      active: 'Activo'
+      category: 'Categoría'
+      add_image: 'Agregar imagen'
+      primary: 'principal'
+      delete_image: 'Eliminar imagen'
+      tags: 'Etiquetas'
+    user:
+      username: 'Nombre de usuario'
+      email: 'Correo electrónico'
+    slider:
+      name: 'Nombre'
+  flash_messages:
+    created: 'Creado'
+    error: 'Error'
+    updated: 'Actualizado'
+    deleted: 'Borrado'
+
+    specific:
+      category_restriction: 'No puedes borrar una categoría que tiene productos'
+  
