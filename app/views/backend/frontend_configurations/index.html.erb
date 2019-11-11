@@ -1,20 +1,20 @@
-<h1 class='mt-2'>Configuration</h1>
+<h1 class='mt-2'><%= t('entity.configuration') %></h1>
 <%= render 'flash_message' %>
 <div class='container'>
-  <h3 class='mt-2'>Logo</h3>
+  <h3 class='mt-2'><%= t('entity.logo') %></h3>
   <%= image_tag @configuration.get_image, class: 'img-fluid js-image-replacer' %>
   <br>
-  <%= link_to 'Edit', edit_admin_frontend_configuration_path(@configuration), remote: true, class: 'mt-2 btn btn-outline-warning' %>
+  <%= link_to t('button_options.edit'), edit_admin_frontend_configuration_path(@configuration), remote: true, class: 'mt-2 btn btn-outline-warning' %>
 </div>
 <div class='container'>
-  <h3 class='mt-2'>Sliders</h3>
+  <h3 class='mt-2'><%= t('entities.sliders') %></h3>
   <%= render 'backend/sliders/filter' %>
   <table class="table table-bordered">
     <thead class="thead-light">
       <tr>
-        <th>Name</th>
-        <th>Image</th>
-        <th class='text-right'><%= link_to 'New', new_admin_slider_path, remote: true, class: 'btn btn-primary' %></th>
+        <th><%= t('entity_fields.slider.name') %></th>
+        <th><%= t('entity_fields.slider.image') %></th>
+        <th class='text-right'><%= link_to t('button_options.new'), new_admin_slider_path, remote: true, class: 'btn btn-primary' %></th>
       </tr>
     </thead>
     <tbody id='sliders_container'>

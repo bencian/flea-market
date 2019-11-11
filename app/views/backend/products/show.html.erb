@@ -1,7 +1,7 @@
 <h2 class='mt-2'><%= @product.name %></h2>
 <div class='text-right'>
-  <%= link_to 'Volver', admin_products_path, class: 'btn btn-outline-secondary' %>
-  <%= link_to 'Editar', edit_admin_product_path(@product), class: 'btn btn-outline-warning' %>
+  <%= link_to t('button_options.return'), admin_products_path, class: 'btn btn-outline-secondary' %>
+  <%= link_to t('button_options.edit'), edit_admin_product_path(@product), class: 'btn btn-outline-warning' %>
 </div>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -28,31 +28,31 @@
 </div>
 <div class='card'>
   <div class='card-body'>
-    <h4>Descripción</h4>
+    <h4><%= t('entity_fields.product.description') %></h4>
     <p><%= @product.description %></p>
   </div>
   <div class='card-body'>
-    <h4>Código Interno</h4>
+    <h4><%= t('entity_fields.product.code') %></h4>
     <p><%= @product.code %></p>
   </div>
   <div class='card-body'>
-    <h4>Precio</h4>
+    <h4><%= t('entity_fields.product.price') %></h4>
     <p><%= @product.price %></p>
   </div>
   <div class='card-body'>
-    <h4>Costo</h4>
+    <h4><%= t('entity_fields.product.cost') %></h4>
     <p><%= @product.cost %></p>
   </div>
   <div class='card-body'>
-    <h4>Activo</h4>
+    <h4><%= t('entity_fields.product.active') %></h4>
     <p><%= @product.active %></p>
   </div>
   <div class='card-body'>
-    <h4>Categoría</h4>
+    <h4><%= t('entity_fields.product.category') %></h4>
     <p><%= @product.category.name %></p>
   </div>
   <div class='card-body'>
-    <h4>Etiquetas</h4>
+    <h4><%= t('entity_fields.product.tags') %></h4>
     <p>
       <% @product.tags.each do |tag| %>
         <%= tag.name %>

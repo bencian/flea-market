@@ -1,4 +1,4 @@
-<h1 class='mt-2'>Productos</h1>
+<h1 class='mt-2'><%= t('entities.products') %></h1>
 <%= render 'flash_message' %>
 
 <%= render 'filter' %>
@@ -6,16 +6,16 @@
 <table class="table table-bordered">
   <thead class="thead-light">
     <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th>Código Interno</th>
-      <th>Precio</th>
-      <th>Costo</th>
-      <th>Activo</th>
-      <th>Categoría</th>
-      <th>Etiquetas</th>
-      <th>Imagen</th>
-      <th class='text-right'><%= link_to 'Nueva', new_admin_product_path, class: 'btn btn-primary' %></th>
+      <th><%= t('entity_fields.product.name') %></th>
+      <th><%= t('entity_fields.product.description') %></th>
+      <th><%= t('entity_fields.product.code') %></th>
+      <th><%= t('entity_fields.product.price') %></th>
+      <th><%= t('entity_fields.product.cost') %></th>
+      <th><%= t('entity_fields.product.active') %></th>
+      <th><%= t('entity_fields.product.category') %></th>
+      <th><%= t('entity_fields.product.tags') %></th>
+      <th><%= t('entity_fields.product.image') %></th>
+      <th class='text-right'><%= link_to t('button_options.new'), new_admin_product_path, class: 'btn btn-primary' %></th>
     </tr>
   </thead>
   <tbody>

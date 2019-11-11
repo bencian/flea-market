@@ -1,12 +1,12 @@
 <%= form_with model: [:admin, @configuration] do |f| %>
     <div class="form-group">
-      <%= f.label :image, 'Logo' %>
+      <%= f.label :image, t('entity.logo') %>
       <br>
       <%= image_tag @configuration.get_image, class: 'img-fluid'%>
       <%= f.file_field :image, class: 'form-control' %>
     </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('button_options.close')%></button>
+    <%= f.submit t('button_options.save'), class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -7,6 +7,7 @@ es:
     save: 'Guardar'
     return: 'Volver'
     new: 'Nuevo'
+    close: 'Cerrar'
   entities:
     tags: 'Etiquetas'
     categories: 'Categorías'
@@ -43,6 +44,23 @@ es:
       email: 'Correo electrónico'
     slider:
       name: 'Nombre'
+      image: 'Imagen'
+  entity_titles:
+    tag:
+      edit: 'Editar etiqueta'
+      new: 'Nueva etiqueta'
+    category:
+      edit: 'Editar categoría'
+      new: 'Nueva categoría'
+    product:
+      edit: 'Editar producto'
+      new: 'Nuevo producto'
+    user:
+      edit: 'Editar administrador'
+      new: 'Nuevo administrador'
+    configuration:
+      edit: 'Editar configuración'
+    
   flash_messages:
     created: 'Creado'
     error: 'Error'
@@ -51,4 +69,7 @@ es:
 
     specific:
       category_restriction: 'No puedes borrar una categoría que tiene productos'
+
+  alerts:
+    you_sure: '¿estás seguro?'
   

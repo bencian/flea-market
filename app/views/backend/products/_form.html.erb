@@ -4,43 +4,43 @@
 <div class='card'>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :name, 'Nombre' %>
+      <%= f.label :name, t('entity_fields.product.name') %>
       <%= f.text_field :name, class: 'form-control' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :description, 'Descripción' %>
+      <%= f.label :description, t('entity_fields.product.description') %>
       <%= f.text_field :description, class: 'form-control' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :code, 'Código Interno' %>
+      <%= f.label :code, t('entity_fields.product.code') %>
       <%= f.number_field :code, class: 'form-control' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :price, 'Precio' %>
+      <%= f.label :price, t('entity_fields.product.price') %>
       <%= f.number_field :price, step: :any, class: 'form-control' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :cost, 'Costo' %>
+      <%= f.label :cost, t('entity_fields.product.cost') %>
       <%= f.number_field :cost, step: :any, class: 'form-control' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-check">
-      <%= f.label :active, 'Activo', class: "form-check-label" %>
+      <%= f.label :active, t('entity_fields.product.active'), class: "form-check-label" %>
       <%= f.check_box :active, class: 'form-check-input' %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :category_id, 'Categoria' %>
+      <%= f.label :category_id, t('entity_fields.product.category') %>
       <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: ''}, class: 'form-control' %>
     </div>
   </div>
@@ -49,18 +49,18 @@
       <%= render 'product_image_fields', f: pi %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'Agregar imagen', f, :product_images %>
+      <%= link_to_add_association t('entity_fields.product.add_image'), f, :product_images %>
     </div>
   </div>
   <div class='card-body'>
     <div class="form-group">
-      <%= f.label :tag_ids, 'Etiquetas' %>
+      <%= f.label :tag_ids, t('entity_fields.product.tags') %>
       <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, class: 'form-control', multiple: true %>
     </div>
   </div>
   <div class='card-footer'>
-    <%= link_to 'Volver', admin_products_path, class: 'btn btn-outline-secondary' %>
-    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+    <%= link_to t('button_options.return'), admin_products_path, class: 'btn btn-outline-secondary' %>
+    <%= f.submit t('button_options.save'), class: 'btn btn-primary' %>
   </div>
 </div>
 <% end %>
