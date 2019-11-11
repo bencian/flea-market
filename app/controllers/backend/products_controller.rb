@@ -18,27 +18,27 @@ class Backend::ProductsController < BackendController
     @product = Product.new(product_params)
 
     if @product.save
-      flash[:notice] = 'Created'
+      flash[:notice] = t('actions.new')
       redirect_to admin_products_path
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :new
     end
   end
 
   def update
     if @product.update(product_params)
-      flash[:notice] = 'Updated'
+      flash[:notice] = t('actions.update')
       redirect_to admin_products_path
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :edit
     end
   end
 
   def destroy 
     @product.destroy
-    flash[:notice] = 'Deleted'
+    flash[:notice] = t('actions.delete')
     redirect_to admin_products_path
   end
 

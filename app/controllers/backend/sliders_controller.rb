@@ -15,9 +15,9 @@ class Backend::SlidersController < BackendController
   def create
     @slider = Slider.new(slider_params)
     if @slider.save
-      flash.now[:notice] = 'Created'
+      flash.now[:notice] = t('actions.new')
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :save_error
     end
   end
@@ -25,9 +25,9 @@ class Backend::SlidersController < BackendController
   def update
     @slider = Slider.find(params[:id])
     if @slider.update(slider_params)
-      flash[:notice] = 'Updated'
+      flash[:notice] = t('actions.update')
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :save_error
     end
   end
@@ -35,7 +35,7 @@ class Backend::SlidersController < BackendController
   def destroy
     @slider = Slider.find(params[:id])
     @slider.destroy
-    flash[:notice] = 'Deleted'
+    flash[:notice] = t('actions.delete')
   end
 
   private

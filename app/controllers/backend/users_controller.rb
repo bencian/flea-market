@@ -17,7 +17,7 @@ class Backend::UsersController < BackendController
     @user.password = user_params[:username]
     @user.password_confirmation = user_params[:username]
     if @user.save
-      flash[:notice] = 'Creado'
+      flash[:notice] = t('actions.new')
       redirect_to admin_users_path
     else
       flash.now[:alert] = @user.errors
@@ -27,10 +27,10 @@ class Backend::UsersController < BackendController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = 'Editado'
+      flash[:notice] = t('actions.update')
       redirect_to admin_users_path
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :edit
     end
   end
@@ -38,9 +38,9 @@ class Backend::UsersController < BackendController
   def destroy
     if current_admin != @user
       @user.destroy
-      flash[:notice] = 'Eliminado'
+      flash[:notice] = t('actions.delete')
     else
-      flash[:alert] = 'No te puedes borrar a ti mismo'
+      flash[:alert] = t('actions.specific.user_delete')
     end
     redirect_to admin_users_path
   end

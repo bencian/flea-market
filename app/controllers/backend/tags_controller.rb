@@ -17,26 +17,26 @@ class Backend::TagsController < BackendController
     @tag = Tag.new(tag_params)
 
     if @tag.save
-      flash[:notice] = 'Creado'
+      flash[:notice] = t('actions.new')
       redirect_to admin_tags_path
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :new
     end
   end
 
   def update
     if @tag.update(tag_params)
-      flash[:notice] = 'Updated'
+      flash[:notice] = t('actions.update')
       redirect_to admin_tags_path
     else
-      flash.now[:alert] = 'Error'
+      flash.now[:alert] = t('actions.error')
       render :edit
     end
   end
 
   def destroy
-    flash[:notice] = 'Eliminado'
+    flash[:notice] = t('actions.delete')
     redirect_to admin_tags_path
   end
 

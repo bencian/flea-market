@@ -89,4 +89,12 @@ es:
     you_sure: '¿Estás seguro?'
     password_info: 'Dejala en blanco si no quieres modificarla'
     password_confirm: 'Necesitamos tu contraseña anterior para editar'
-  
+
+  actions:
+    new: 'Creado'
+    delete: 'Eliminado'
+    update: 'Modificado'
+    error: 'Error'
+    specific:
+      user_delete: 'No te podés borrar a vos mismo'
+      category_delete: 'No podés borrar una categoría que tiene productos'
