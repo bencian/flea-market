@@ -62,6 +62,7 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'should_not'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

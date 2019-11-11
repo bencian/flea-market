@@ -13,12 +13,12 @@ RSpec.describe Slider, type: :model do
   end
 
   describe 'Presence validations' do
-    before { FactoryBot.build(:slider) }
+    subject { FactoryBot.build(:slider) }
     it { should validate_presence_of(:name) }
   end
 
   describe 'Uniqueness validations' do
-    before { FactoryBot.build(:slider) }
+    subject { FactoryBot.build(:slider) }
     it { should validate_uniqueness_of(:name) }
   end
 

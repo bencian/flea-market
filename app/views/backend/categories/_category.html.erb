@@ -1,7 +1,7 @@
 <tr>
   <td><%= category.name %></td>
   <td class='text-right'>
-    <%= link_to 'Editar', edit_admin_category_path(category), class: 'btn btn-sm btn-outline-warning' %>
+    <%= link_to t(:edit), edit_admin_category_path(category), class: 'btn btn-sm btn-outline-warning' %>
     <%= link_to 'Borrar', admin_category_path(category), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>
